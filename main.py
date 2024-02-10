@@ -12,7 +12,7 @@ def create_note():
     with open(note_name + ".txt", "w") as file:
         file.write(note_content)
 
-    print("Заметка создана успешно!")
+    print("Заметка создана!")
 
 def read_notes():
     notes = os.listdir()
@@ -24,20 +24,20 @@ def read_notes():
                 print("-----------------------")
 
 def edit_note():
-    note_name = input("Введите название заметки, которую хотите отредактировать: ")
+    note_name = input("Введите имя заметки, которую нужно отредактировать: ")
     if os.path.exists(note_name + ".txt"):
         with open(note_name + ".txt", "w") as file:
             note_content = input("Введите новый текст заметки: ")
             file.write(note_content)
-        print("Заметка отредактирована успешно!")
+        print("Заметка отредактирована!")
     else:
         print("Заметка не найдена")
 
 def delete_note():
-    note_name = input("Введите название заметки, которую хотите удалить: ")
+    note_name = input("Введите имя заметки, которую нудно удалить: ")
     if os.path.exists(note_name + ".txt"):
         os.remove(note_name + ".txt")
-        print("Заметка удалена успешно!")
+        print("Заметка удалена!")
     else:
         print("Заметка не найдена")
 
@@ -62,7 +62,7 @@ def main():
         elif choice == "5":
             break
         else:
-            print("Некорректный ввод, попробуйте еще раз.")
+            print("Некорректный ввод, попробуйте еще раз")
 
 if __name__ == "__main__":
     main()
